@@ -14,7 +14,7 @@ numpy
 pandas
 scipy
 joblib
-scikit-learn
+scikit-learn==1.8.0
 xgboost
 catboost
 psycopg[binary]
