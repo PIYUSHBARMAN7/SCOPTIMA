@@ -12,7 +12,7 @@ import {
 import PasswordField from "./PasswordField";
 
 
-const API_URL = "http://localhost:8000";
+import { API_URL } from "../../config/api";
 
 
 export default function LoginForm() {
@@ -193,10 +193,8 @@ export default function LoginForm() {
   // ========================================================
 
   const handleGoogleLogin = () => {
-
     window.location.href =
       `${API_URL}/api/auth/google/login`;
-
   };
 
 
@@ -205,10 +203,8 @@ export default function LoginForm() {
   // ========================================================
 
   const handleGithubLogin = () => {
-
-    window.location.href =
-      `${API_URL}/api/auth/github/login`;
-
+   window.location.href =
+    `${API_URL}/api/auth/github/login`;
   };
 
 

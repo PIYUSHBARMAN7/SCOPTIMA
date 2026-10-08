@@ -59,8 +59,7 @@ export interface ForecastTrendResponse {
 }
 
 
-const API_BASE =
-  "http://localhost:8000";
+import { API_URL } from "../config/api";
 
 
 export async function getDashboardOverview():
@@ -68,7 +67,7 @@ export async function getDashboardOverview():
 
   const response =
     await fetch(
-      `${API_BASE}/api/dashboard/overview`,
+      `${API_URL}/api/dashboard/overview`,
       {
         method: "GET",
         credentials: "include",
@@ -97,7 +96,7 @@ export async function getForecastTrend():
 
   const response =
     await fetch(
-      `${API_BASE}/api/dashboard/forecast-trend`,
+      `${API_URL}/api/dashboard/forecast-trend`,
       {
         method: "GET",
         credentials: "include",
@@ -174,7 +173,7 @@ export async function getInventoryOptimization():
 
   const response =
     await fetch(
-      "http://localhost:8000/api/dashboard/inventory-optimization",
+      `${API_URL}/api/dashboard/inventory-optimization`,
       {
         method: "GET",
 
@@ -304,7 +303,7 @@ export async function getStockoutRisk():
 
   const response =
     await fetch(
-      "http://localhost:8000/api/dashboard/stockout-risk",
+      `${API_URL}/api/dashboard/stockout-risk`,
       {
         method: "GET",
 
@@ -411,7 +410,7 @@ export async function getCostSavings():
 
   const response =
     await fetch(
-      "http://localhost:8000/api/dashboard/cost-savings",
+      `${API_URL}/api/dashboard/cost-savings`,
       {
         method:
           "GET",
@@ -527,7 +526,7 @@ export async function getModelPerformance():
 
   const response =
     await fetch(
-      "http://localhost:8000/api/dashboard/model-performance",
+      `${API_URL}/api/dashboard/model-performance`,
       {
         method: "GET",
 
@@ -626,7 +625,7 @@ export async function getExecutiveReport():
   Promise<ReportResponse> {
 
   const response = await fetch(
-    "http://localhost:8000/api/dashboard/report",
+    `${API_URL}/api/dashboard/report`,
     {
       method: "GET",
       credentials: "include",
@@ -753,7 +752,7 @@ export async function getDataQuality():
 
   const response =
     await fetch(
-      "http://localhost:8000/api/dashboard/data-quality",
+      `${API_URL}/api/dashboard/data-quality`,
       {
         method: "GET",
 
@@ -848,7 +847,7 @@ async function dashboardGet<T>(
 
   const response =
     await fetch(
-      `http://localhost:8000/api/dashboard${path}`,
+      `${API_URL}api/dashboard${path}`,
       {
         credentials: "include",
       }

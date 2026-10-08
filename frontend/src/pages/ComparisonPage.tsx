@@ -6,7 +6,6 @@ import {
 
 import {
   ArrowRightLeft,
-  BarChart3,
   Building2,
   CalendarRange,
   PackageSearch,

@@ -6,7 +6,7 @@ import {
 } from "react";
 
 import type { ReactNode } from "react";
-
+import { API_URL } from "../config/api";
 
 export type UserRole =
   | "Analyst"
@@ -54,7 +54,7 @@ export function AuthProvider({
   const refreshUser = async () => {
     try {
       const response = await fetch(
-        "http://localhost:8000/api/auth/me",
+        `${API_URL}/api/auth/me`,
         {
           method: "GET",
           credentials: "include",
@@ -97,7 +97,7 @@ export function AuthProvider({
   const logout = async () => {
     try {
       await fetch(
-        "http://localhost:8000/api/auth/logout",
+        `${API_URL}/api/auth/logout`,
         {
           method: "POST",
           credentials: "include",

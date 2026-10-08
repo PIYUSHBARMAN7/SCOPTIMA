@@ -69,9 +69,7 @@ type PredictionResult = {
   >;
 };
 
-
-const API_BASE =
-  "http://localhost:8000";
+import { API_URL } from "../config/api";
 
 
 const modelOptions: {
@@ -219,7 +217,7 @@ export default function RunAnalysisPage() {
 
           const response =
             await fetch(
-              `${API_BASE}/api/predictions/requirements`,
+              `${API_URL}/api/predictions/requirements`,
               {
                 method: "GET",
                 credentials:
@@ -835,7 +833,7 @@ export default function RunAnalysisPage() {
 
       const response =
         await fetch(
-          `${API_BASE}${selectedConfig.endpoint}`,
+          `${API_URL}${selectedConfig.endpoint}`,
           {
             method:
               "POST",
@@ -949,7 +947,7 @@ export default function RunAnalysisPage() {
 
       const response =
         await fetch(
-          `${API_BASE}${endpoint}`,
+          `${API_URL}${endpoint}`,
           {
             method:
               "POST",

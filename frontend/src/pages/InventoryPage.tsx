@@ -5,7 +5,6 @@ import {
 } from "react";
 
 import {
-  AlertTriangle,
   Boxes,
   CircleDollarSign,
   PackageCheck,

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import type { FormEvent } from "react";
 
+import { API_URL } from "../config/api";
+
 import {
   Link,
   useNavigate,
@@ -26,8 +28,7 @@ import "../styles/login.css";
 import "../styles/signup.css";
 
 
-const API_URL =
-  "http://localhost:8000";
+
 
 
 type Role =

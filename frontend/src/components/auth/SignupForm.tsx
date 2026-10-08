@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type { FormEvent } from "react";
+import { API_URL } from "../../config/api";
 import {
   ArrowRight,
   BriefcaseBusiness,
@@ -89,7 +90,7 @@ export default function SignupForm() {
 
   try {
     const response = await fetch(
-      "http://localhost:8000/api/auth/register",
+      `${API_URL}/api/auth/register`,
       {
         method: "POST",
 

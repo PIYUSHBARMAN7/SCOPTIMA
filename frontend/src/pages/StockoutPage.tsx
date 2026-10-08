@@ -9,7 +9,6 @@ import {
 } from "react-router-dom";
 
 import {
-  AlertTriangle,
   BrainCircuit,
   CheckCircle2,
   PackageX,
