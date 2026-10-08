@@ -1,0 +1,695 @@
+/* =========================================================
+   SCOPTIMA ROLE-BASED SIGNUP
+   Uses LOGIN page sizing/layout:
+   58% LEFT / 42% RIGHT
+========================================================= */
+
+
+/* =========================================================
+   SAME PAGE SIZE AS LOGIN
+========================================================= */
+
+.signup-page-role {
+  height: 100vh;
+  min-height: 100vh;
+
+  grid-template-columns:
+    58% 42%;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   LEFT SIDE
+========================================================= */
+
+.signup-page-role .login-visual {
+  height: 100vh;
+}
+
+
+.signup-left-message {
+  margin-bottom: 42px;
+}
+
+
+.signup-left-message h1 {
+  font-size:
+    clamp(
+      65px,
+      7vw,
+      115px
+    );
+}
+
+
+.signup-left-description {
+  max-width: 470px;
+
+  margin:
+    25px 0 0;
+
+  color:
+    var(--cream);
+
+  opacity:
+    0.58;
+
+  font-size:
+    12px;
+
+  line-height:
+    1.7;
+
+  letter-spacing:
+    normal;
+}
+
+
+/* =========================================================
+   RIGHT SIDE
+   SAME WIDTH AS LOGIN FORM
+========================================================= */
+
+.signup-page-role .login-panel {
+  height: 100vh;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  padding: 60px;
+}
+
+
+.signup-form-role {
+  width:
+    min(
+      100%,
+      480px
+    );
+
+  margin:
+    0 auto;
+
+  padding-top:
+    20px;
+
+  padding-bottom:
+    80px;
+}
+
+
+/* =========================================================
+   ROLE SECTION
+========================================================= */
+
+.signup-role-section {
+  margin-top:
+    30px;
+}
+
+
+.signup-role-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap:
+    10px;
+}
+
+
+/* =========================================================
+   ROLE CARD
+========================================================= */
+
+.signup-page-role .signup-role {
+  position: relative;
+
+  min-height:
+    104px;
+
+  padding:
+    15px;
+
+  display: flex;
+
+  align-items:
+    flex-start;
+
+  gap:
+    11px;
+
+  border:
+    1px solid
+    var(--line);
+
+  background:
+    #080e25;
+
+  color:
+    var(--white);
+
+  font-family:
+    inherit;
+
+  text-align:
+    left;
+
+  cursor:
+    pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.signup-page-role .signup-role:hover {
+  background:
+    var(--blue);
+
+  border-color:
+    rgba(
+      215,
+      164,
+      73,
+      0.45
+    );
+
+  transform:
+    translateY(
+      -2px
+    );
+}
+
+
+.signup-page-role .signup-role.active {
+  border-color:
+    var(--gold);
+
+  background:
+    rgba(
+      215,
+      164,
+      73,
+      0.08
+    );
+}
+
+
+.signup-page-role .signup-role > svg:first-child {
+  flex-shrink:
+    0;
+
+  margin-top:
+    2px;
+
+  color:
+    var(--gold);
+}
+
+
+.signup-page-role .signup-role strong {
+  display:
+    block;
+
+  margin-bottom:
+    6px;
+
+  color:
+    var(--white);
+
+  font-size:
+    12px;
+}
+
+
+.signup-page-role .signup-role span {
+  display:
+    block;
+
+  color:
+    var(--cream);
+
+  opacity:
+    0.58;
+
+  font-size:
+    9px;
+
+  line-height:
+    1.5;
+}
+
+
+.signup-role-selected {
+  position:
+    absolute;
+
+  top:
+    9px;
+
+  right:
+    9px;
+
+  color:
+    var(--gold) !important;
+}
+
+
+/* =========================================================
+   ANALYST CODE
+========================================================= */
+
+.signup-analyst-code {
+  padding:
+    16px;
+
+  box-sizing:
+    border-box;
+
+  border:
+    1px solid
+    rgba(
+      215,
+      164,
+      73,
+      0.22
+    );
+
+  background:
+    rgba(
+      215,
+      164,
+      73,
+      0.035
+    );
+}
+
+
+.signup-analyst-code .input-with-icon input {
+  background:
+    #080e25;
+}
+
+
+.signup-field-note {
+  margin:
+    8px 0 0;
+
+  color:
+    var(--cream);
+
+  opacity:
+    0.48;
+
+  font-size:
+    9px;
+
+  line-height:
+    1.5;
+}
+
+
+/* =========================================================
+   PASSWORD
+========================================================= */
+
+.signup-password-wrapper {
+  position:
+    relative;
+}
+
+
+.signup-password-wrapper input {
+  width:
+    100%;
+
+  height:
+    55px;
+
+  padding:
+    0 50px
+    0 15px;
+
+  box-sizing:
+    border-box;
+
+  border:
+    1px solid
+    var(--line);
+
+  outline:
+    none;
+
+  background:
+    #080e25;
+
+  color:
+    var(--white);
+
+  font-family:
+    inherit;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.signup-password-wrapper input::placeholder {
+  color:
+    rgba(
+      232,
+      226,
+      216,
+      0.4
+    );
+}
+
+
+.signup-password-wrapper input:focus {
+  background:
+    #101833;
+
+  border-color:
+    var(--gold);
+
+  box-shadow:
+    0 0 0
+    3px
+    rgba(
+      215,
+      164,
+      73,
+      0.08
+    );
+}
+
+
+/* =========================================================
+   SELECTED ROLE SUMMARY
+========================================================= */
+
+.signup-access-summary {
+  width:
+    100%;
+
+  min-height:
+    58px;
+
+  margin-top:
+    22px;
+
+  padding:
+    12px 14px;
+
+  box-sizing:
+    border-box;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    11px;
+
+  border:
+    1px solid
+    var(--line);
+
+  background:
+    #080e25;
+}
+
+
+.signup-access-summary.viewer {
+  border-color:
+    rgba(
+      215,
+      164,
+      73,
+      0.22
+    );
+}
+
+
+.signup-access-summary.analyst {
+  border-color:
+    rgba(
+      90,
+      184,
+      210,
+      0.32
+    );
+}
+
+
+.signup-access-summary svg {
+  flex-shrink:
+    0;
+
+  color:
+    var(--gold);
+}
+
+
+.signup-access-summary.analyst svg {
+  color:
+    #5ab8d2;
+}
+
+
+.signup-access-summary span {
+  display:
+    block;
+
+  color:
+    var(--cream);
+
+  opacity:
+    0.45;
+
+  font-size:
+    7px;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    0.12em;
+}
+
+
+.signup-access-summary strong {
+  display:
+    block;
+
+  margin-top:
+    4px;
+
+  color:
+    var(--white);
+
+  font-size:
+    11px;
+}
+
+
+/* =========================================================
+   TERMS
+========================================================= */
+
+.signup-page-role .signup-terms {
+  margin:
+    20px 0 0;
+}
+
+
+.signup-page-role .signup-terms label {
+  display:
+    flex;
+
+  align-items:
+    flex-start;
+
+  gap:
+    9px;
+
+  color:
+    var(--cream);
+
+  opacity:
+    0.72;
+
+  font-size:
+    10px;
+
+  line-height:
+    1.6;
+
+  cursor:
+    pointer;
+}
+
+
+.signup-page-role .signup-terms input {
+  margin-top:
+    3px;
+
+  accent-color:
+    var(--gold);
+}
+
+
+/* =========================================================
+   SUCCESS
+========================================================= */
+
+.signup-success-box {
+  margin-top:
+    18px;
+
+  padding:
+    13px 15px;
+
+  border:
+    1px solid
+    rgba(
+      73,
+      184,
+      90,
+      0.35
+    );
+
+  background:
+    rgba(
+      73,
+      184,
+      90,
+      0.08
+    );
+
+  color:
+    #75d985;
+
+  font-size:
+    12px;
+
+  line-height:
+    1.5;
+}
+
+
+/* =========================================================
+   CREATE BUTTON
+========================================================= */
+
+.signup-page-role .login-submit {
+  margin-top:
+    28px;
+}
+
+
+/* =========================================================
+   LOGIN LINK
+========================================================= */
+
+.signup-page-role .signup-text {
+  margin-top:
+    23px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (
+  max-width: 900px
+) {
+
+  .signup-page-role {
+    height:
+      auto;
+
+    min-height:
+      100vh;
+
+    display:
+      block;
+
+    overflow:
+      visible;
+  }
+
+
+  .signup-page-role .login-visual {
+    height:
+      auto;
+
+    min-height:
+      75vh;
+  }
+
+
+  .signup-page-role .login-panel {
+    height:
+      auto;
+
+    overflow:
+      visible;
+
+    padding:
+      60px 30px;
+  }
+
+
+  .signup-form-role {
+    padding-top:
+      0;
+
+    padding-bottom:
+      30px;
+  }
+
+}
+
+
+@media (
+  max-width: 600px
+) {
+
+  .signup-page-role .login-panel {
+    padding:
+      55px 20px;
+  }
+
+
+  .signup-role-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .signup-left-message h1 {
+    font-size:
+      60px;
+  }
+
+}

@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+:root {
+  font-family: "Inter", sans-serif;
+
+  /* =========================================
+     BRAND PALETTE
+  ========================================= */
+
+  --red: #DB3F29;
+  --navy: #03081B;
+  --blue: #212B50;
+  --gold: #D7A449;
+  --cream: #E8E2D8;
+  --white: #FFFFFF;
+
+  /* =========================================
+     APP COLORS
+  ========================================= */
+
+  --bg: #03081B;
+
+  --bg-soft: #080E25;
+
+  --panel: #111936;
+
+  --panel-hover: #212B50;
+
+  --text: #FFFFFF;
+
+  --text-soft: #E8E2D8;
+
+  --muted: #A7A29B;
+
+  --line: rgba(232, 226, 216, 0.14);
+
+  --line-strong: rgba(232, 226, 216, 0.25);
+
+  --accent: #D7A449;
+
+  --accent-dark: #B88637;
+
+  --danger: #DB3F29;
+
+  --danger-soft: rgba(219, 63, 41, 0.1);
+}
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+
+  background: var(--bg);
+}
+
+body {
+  min-width: 320px;
+
+  margin: 0;
+
+  background: var(--bg);
+
+  color: var(--text);
+
+  font-family: "Inter", sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: var(--gold);
+
+  color: var(--navy);
+}
+
