@@ -914,3 +914,7 @@ export function compareActualForecast() {
     "/comparison/actual-forecast"
   );
 }
+
+fetch(`${API_URL}/api/dashboard/comparison/options`, {
+  credentials: "include",
+});

@@ -142,7 +142,10 @@ def set_auth_cookie(
 
     response.set_cookie(
         key="scoptima_access_token",
-
+        httponly=True,
+        secure=os.getenv("APP_ENV", "development") == "production",
+        samesite="lax",
+        path="/",   
         value=access_token,
 
         httponly=True,

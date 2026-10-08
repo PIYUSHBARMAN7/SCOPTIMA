@@ -36,7 +36,7 @@ if IS_PRODUCTION and not SESSION_SECRET:
 app.add_middleware(
     SessionMiddleware,
     secret_key=SESSION_SECRET or "local-development-only",
-    same_site="none" if IS_PRODUCTION else "lax",
+    same_site="lax",
     https_only=IS_PRODUCTION,
 )
 
