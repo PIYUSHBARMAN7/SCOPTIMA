@@ -1,7 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import os
-
+from dotenv import load_dotenv
+load_dotenv()
 from starlette.middleware.sessions import SessionMiddleware
 from app.database import Base, engine
 
@@ -20,33 +21,32 @@ app = FastAPI(
 )
 
 
+IS_PRODUCTION = os.getenv("APP_ENV", "development") == "production"
+
+FRONTEND_URL = os.getenv(
+    "FRONTEND_URL",
+    "http://localhost:5173"
+).rstrip("/")
+
+SESSION_SECRET = os.getenv("OAUTH_STATE_SECRET")
+
+if IS_PRODUCTION and not SESSION_SECRET:
+    raise RuntimeError("OAUTH_STATE_SECRET is required")
+
 app.add_middleware(
     SessionMiddleware,
-
-    secret_key=os.getenv(
-        "OAUTH_STATE_SECRET",
-        "development-oauth-secret-change-me",
-    ),
-
-    same_site="lax",
-
-    https_only=False,
+    secret_key=SESSION_SECRET or "local-development-only",
+    same_site="none" if IS_PRODUCTION else "lax",
+    https_only=IS_PRODUCTION,
 )
-
-# ==========================================================
-# CORS
-# ==========================================================
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",
-    ],
+    allow_origins=[FRONTEND_URL],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 
 # ==========================================================
 # ROUTERS
