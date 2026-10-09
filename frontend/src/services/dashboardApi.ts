@@ -841,29 +841,37 @@ export interface ActualForecastResponse {
 }
 
 
-async function dashboardGet<T>(
-  path: string
-): Promise<T> {
+async function dashboardGet<T>(path: string): Promise<T> {
+  const url = `${API_URL}/api/dashboard${path}`;
 
-  const response =
-    await fetch(
-      `${API_URL}api/dashboard${path}`,
-      {
-        credentials: "include",
-      }
-    );
+  const response = await fetch(url, {
+    method: "GET",
+    credentials: "include",
+    headers: {
+      Accept: "application/json",
+    },
+  });
 
-  const data =
-    await response.json();
+  const contentType =
+    response.headers.get("content-type") || "";
 
-  if (!response.ok) {
+  if (!contentType.includes("application/json")) {
     throw new Error(
-      data?.detail ||
-      `Request failed: ${response.status}`
+      `Comparison API returned ${response.status} with ${contentType || "unknown content type"} from ${url}. Check Vercel routing.`
     );
   }
 
-  return data;
+  const data = await response.json();
+
+  if (!response.ok) {
+    throw new Error(
+      typeof data.detail === "string"
+        ? data.detail
+        : `Comparison API failed (${response.status})`
+    );
+  }
+
+  return data as T;
 }
 
 
