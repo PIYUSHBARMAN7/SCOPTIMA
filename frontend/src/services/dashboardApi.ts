@@ -857,17 +857,23 @@ async function dashboardGet<T>(path: string): Promise<T> {
 
   if (!contentType.includes("application/json")) {
     throw new Error(
-      `Comparison API returned ${response.status} with ${contentType || "unknown content type"} from ${url}. Check Vercel routing.`
+      `API routing error (${response.status}): ${url} returned HTML instead of JSON.`
     );
   }
 
   const data = await response.json();
 
+  if (response.status === 401) {
+    throw new Error(
+      "Your session has expired. Please sign in again."
+    );
+  }
+
   if (!response.ok) {
     throw new Error(
       typeof data.detail === "string"
         ? data.detail
-        : `Comparison API failed (${response.status})`
+        : `Comparison request failed (${response.status})`
     );
   }
 
