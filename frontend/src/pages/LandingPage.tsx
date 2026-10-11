@@ -30,6 +30,11 @@ export default function LandingPage() {
           <p>AI-powered supply chain intelligence.</p>
         </div>
 
+        <div className="scoptima-developer-credit">
+          <span>DESIGNED & DEVELOPED BY</span>
+          <strong>Piyush Barman & Sheikh Sameer Ali</strong>
+    </div>
+
         <span>© 2026 Supply Chain AI Platform</span>
       </footer>
     </main>

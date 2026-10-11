@@ -104,3 +104,24 @@ button {
   color: var(--navy);
 }
 
+.scoptima-developer-credit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 22px 0;
+  text-align: center;
+}
+
+.scoptima-developer-credit span {
+  color: #94a3b8;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.scoptima-developer-credit strong {
+  color: #f8fafc;
+  font-size: 14px;
+  font-weight: 600;
+}
